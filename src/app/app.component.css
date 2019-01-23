@@ -1,0 +1,10 @@
+
+#maincontainer{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: 100%;
+    padding:1em;
+    margin:2em;
+    background-color: wheat;
+}

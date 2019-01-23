@@ -1,0 +1,11 @@
+a {
+    text-decoration: none!important ;
+    color:black;
+    font-style: none;
+    cursor: pointer;
+}
+
+button{
+    margin:0em 0.2em 0em 0em;
+}
+
