@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -21,11 +22,18 @@ export class RecipeDetailComponent implements OnInit {
     });
   }
 
+  
+
   addToList(){
     this.recipeService.addIngredientToList(this.recipe.ingredients);
   }
   onEditLinkClicked(){
     this.router.navigate(['edit'], {relativeTo:this.route});
+  }
+
+  onDelete(){
+    this.recipeService.deleteRecipe(this.id-1);
+    this.router.navigate(['../', {relativeTo:this.route}]);
   }
 
 }

@@ -17,7 +17,7 @@
       <ul class="dropdown-menu">
         <li (click)="addToList()"><a>Add To List</a></li>
         <li routerLinkActive="active"><a (click)="onEditLinkClicked()">Edit Recipe</a></li>
-        <li><a>Delete Recipe</a></li>
+        <li><a (click)="onDelete()">Delete Recipe</a></li>
       </ul>
     </div>
   </div>

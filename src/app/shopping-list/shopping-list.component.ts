@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Ingredient} from '../shared/ingredient.model'
 import { ShoppingListService } from '../services/shopping-list.service';
 import { Subscription } from 'rxjs';
+import { timingSafeEqual } from 'crypto';
 
 @Component({
   selector: 'app-shopping-list',
@@ -15,7 +16,11 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.ingredients=this.shoppingListService.getIngredients();
-    this.subscription = this.shoppingListService.addIngredientClicked.subscribe((ingredients:Ingredient[])=> this.ingredients=ingredients);
+    this.subscription = this.shoppingListService.ingredientsChanged.subscribe((ingredients:Ingredient[])=> this.ingredients=ingredients);
+  }
+
+  onEdit(i:number){
+    this.shoppingListService.startedEditing.next(i);
   }
 
   ngOnDestroy(){

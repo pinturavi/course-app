@@ -6,6 +6,7 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
+
 const appRoutes:Routes=[
     {path:'', redirectTo:'recipes', pathMatch:'full'},
     {path:'recipes', component:RecipesComponent, 
